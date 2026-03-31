@@ -4,24 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-light d-flex justify-content-center align-items-center vh-100">
-    
-    <div class="card p-4 shadow-sm" style="width: 20rem;">
-        <h2 class="text-center mb-4">Iniciar Sesión</h2>
-        <form>
-            <div class="mb-3">
-                <label class="form-label">Usuario:</label>
-                <input type="text" class="form-control" name="usuario" required>
+<body>
+    <div class="auth-card">
+        <h1>Acceso al Sistema</h1>
+        <p class="subtitle">Inicia sesion con tu cuenta</p>
+
+        <form id="loginForm" class="active">
+            <div class="field">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Contraseña:</label>
-                <input type="password" class="form-control" name="password" required>
+            <div class="field">
+                <label for="password">Contrasena</label>
+                <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <button type="submit" class="btn-main">Entrar</button>
         </form>
+
+        <div id="resultado" class="alert hidden" role="alert"></div>
+
+        <div id="panelAdmin" class="panel hidden">
+            <button id="btnVerRoles" type="button">
+                Ver roles del sistema
+            </button>
+            <ul id="listaRoles" class="roles hidden">
+                <li>admin</li>
+                <li>profe</li>
+                <li>alumno</li>
+            </ul>
+        </div>
+
+        <div id="panelProfe" class="panel hidden">
+            <div id="mensajeProfe"></div>
+        </div>
     </div>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
