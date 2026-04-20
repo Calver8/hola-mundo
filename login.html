@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-card">
+        <h1>Acceso al Sistema</h1>
+        <p class="subtitle">Inicia sesion con tu cuenta</p>
+
+        <form id="loginForm" class="active">
+            <div class="field">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="field">
+                <label for="password">Contrasena</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn-main">Entrar</button>
+        </form>
+
+        <div id="resultado" class="alert hidden" role="alert"></div>
+
+        <div id="panelAdmin" class="panel hidden">
+            <button id="btnVerRoles" type="button">
+                Ver roles del sistema
+            </button>
+            <ul id="listaRoles" class="roles hidden">
+                <li>admin</li>
+                <li>profe</li>
+                <li>alumno</li>
+            </ul>
+        </div>
+
+        <div id="panelProfe" class="panel hidden">
+            <div id="mensajeProfe"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
